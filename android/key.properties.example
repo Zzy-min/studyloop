@@ -1,0 +1,19 @@
+# StudyLoop Android Upload Key Properties Template
+# ----------------------------------------------------
+# Instructions to generate a production upload keystore:
+#
+# Run the following command in PowerShell / bash:
+# keytool -genkey -v -keystore android/app/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+#
+# Then copy this file to 'android/key.properties' (NEVER COMMIT key.properties OR *.jks TO GIT):
+#
+# storePassword=YOUR_STORE_PASSWORD_HERE
+# keyPassword=YOUR_KEY_PASSWORD_HERE
+# keyAlias=upload
+# storeFile=app/upload-keystore.jks
+# ----------------------------------------------------
+
+storePassword=YOUR_STORE_PASSWORD_HERE
+keyPassword=YOUR_KEY_PASSWORD_HERE
+keyAlias=upload
+storeFile=app/upload-keystore.jks

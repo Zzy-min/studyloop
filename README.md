@@ -1,0 +1,45 @@
+# StudyLoop
+
+A calm, offline-first Android companion for university students who know they need to study but cannot start.
+
+StudyLoop asks why starting is hard, shrinks one task into a single observable action, keeps a small dog nearby, and later shows evidence-based patterns. The immediate-help loop is free. Pro unlocks longer history through RevenueCat, with the Test Store purchase and restore lifecycle verified on a physical Android device.
+
+## Status
+
+Next Gen Award submission candidate with verified RevenueCat Test Store integration. Submission copy, an MIT license, image assets, and a 57-second device capture are prepared locally. The project has not been submitted and no public repository or public video has been created.
+
+## Run
+
+```text
+flutter pub get
+flutter analyze --no-pub
+flutter test --no-pub
+flutter build apk --debug --no-pub
+```
+
+The core study loop runs without credentials. To exercise RevenueCat Test Store,
+create a local `.revenuecat.local.json` from the documented configuration and
+pass its test API key with `--dart-define`; never commit that file or key.
+
+## Privacy
+
+No account or cloud sync is required. Study notes stay in the on-device SQLite
+database. The Next Gen demo uses deterministic local guidance. The repository
+also contains an optional production-oriented AI gateway, but it is not deployed
+or required for the submitted demo. Do not commit RevenueCat, DeepSeek, signing,
+or service-account credentials.
+
+## Next Gen Submission
+
+StudyLoop is entering the RevenueCat Shipaton 2026 **Next Gen Award only**. This
+category is evaluated through a public open-source repository and a demo video;
+a Google Play production listing is not part of this submission path.
+
+- App icon: `submission-assets/studyloop-app-icon-1024.png`
+- Screenshots: `submission-assets/studyloop-*-1179x2556.png`
+- Draft copy and checklist: `devpost-submission.md`
+- License: `LICENSE`
+
+See `docs/hackathon-build/handoff.md` for verification evidence and remaining gates.
+
+Devpost draft: `devpost-submission.md`. Upload-ready images are in `submission-assets/`.

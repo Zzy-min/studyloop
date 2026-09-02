@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130">
+  <defs>
+    <linearGradient id="corgiGold2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6A552"/>
+      <stop offset="100%" stop-color="#D97A26"/>
+    </linearGradient>
+    <linearGradient id="corgiWhite2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F7FAF7"/>
+    </linearGradient>
+    <linearGradient id="laptopSilver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Ear -->
+  <path d="M 28 50 C 14 30, 20 6, 38 12 C 48 18, 50 40, 46 52 Z" fill="url(#corgiGold2)"/>
+  <path d="M 30 44 C 22 28, 25 15, 36 20 C 42 24, 44 38, 41 46 Z" fill="#FBB6C4"/>
+  <!-- Right Ear -->
+  <path d="M 92 50 C 106 30, 100 6, 82 12 C 72 18, 70 40, 74 52 Z" fill="url(#corgiGold2)"/>
+  <path d="M 90 44 C 98 28, 95 15, 84 20 C 78 24, 76 38, 79 46 Z" fill="#FBB6C4"/>
+
+  <!-- Body -->
+  <ellipse cx="60" cy="88" rx="26" ry="22" fill="url(#corgiGold2)"/>
+  <ellipse cx="60" cy="88" rx="16" ry="18" fill="url(#corgiWhite2)"/>
+
+  <!-- Head Base -->
+  <ellipse cx="60" cy="50" rx="32" ry="24" fill="url(#corgiGold2)"/>
+  <!-- Snout / Face White Mask -->
+  <path d="M 60 28 C 57 28, 55 38, 54 44 C 45 46, 42 56, 47 66 C 53 72, 67 72, 73 66 C 78 56, 75 46, 66 44 C 65 38, 63 28, 60 28 Z" fill="url(#corgiWhite2)"/>
+
+  <!-- Headphones Band -->
+  <path d="M 26 48 C 26 20, 94 20, 94 48" fill="none" stroke="#46884E" stroke-width="5" stroke-linecap="round"/>
+  <!-- Left Earpad -->
+  <ellipse cx="26" cy="50" rx="6" ry="10" fill="#366B3D"/>
+  <ellipse cx="27" cy="50" rx="4" ry="7" fill="#6EBB77"/>
+  <!-- Right Earpad -->
+  <ellipse cx="94" cy="50" rx="6" ry="10" fill="#366B3D"/>
+  <ellipse cx="93" cy="50" rx="4" ry="7" fill="#6EBB77"/>
+
+  <!-- Blush -->
+  <circle cx="36" cy="58" r="4.5" fill="#FCA5A5" opacity="0.6"/>
+  <circle cx="84" cy="58" r="4.5" fill="#FCA5A5" opacity="0.6"/>
+
+  <!-- Eyes Focused Looking Down at Screen -->
+  <ellipse cx="46" cy="48" rx="4" ry="3.5" fill="#241A13"/>
+  <circle cx="45" cy="47" r="1.3" fill="#FFFFFF"/>
+  <ellipse cx="74" cy="48" rx="4" ry="3.5" fill="#241A13"/>
+  <circle cx="73" cy="47" r="1.3" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <path d="M 56 56 C 56 53, 64 53, 64 56 C 64 59, 60 61, 56 56 Z" fill="#241A13"/>
+  <circle cx="58" cy="55.5" r="0.8" fill="#FFFFFF" opacity="0.8"/>
+
+  <!-- Calm Smile -->
+  <path d="M 56 61 Q 60 64 64 61" fill="none" stroke="#241A13" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Bandana -->
+  <path d="M 40 70 Q 60 80 80 70 Q 72 88 60 92 Q 48 88 40 70 Z" fill="#5FAF68"/>
+  <path d="M 56 79 C 54 77, 51 77, 51 79 C 51 81, 54 81, 56 79 C 58 77, 61 77, 61 79 C 61 81, 58 81, 56 79 Z" fill="none" stroke="#FFFFFF" stroke-width="1.4"/>
+
+  <!-- Laptop in front of Corgi -->
+  <!-- Laptop Screen Lid -->
+  <polygon points="34,86 86,86 82,112 38,112" fill="url(#laptopSilver)" stroke="#CBD5E1" stroke-width="1.2"/>
+  <!-- Infinity logo on laptop lid -->
+  <path d="M 57 99 C 55 97, 52 97, 52 99 C 52 101, 55 101, 57 99 C 59 97, 62 97, 62 99 C 62 101, 59 101, 57 99 Z" fill="none" stroke="#5FAF68" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Laptop Base -->
+  <polygon points="26,112 94,112 98,118 22,118" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Paws on table/keyboard -->
+  <ellipse cx="32" cy="113" rx="5" ry="3.5" fill="url(#corgiWhite2)"/>
+  <ellipse cx="88" cy="113" rx="5" ry="3.5" fill="url(#corgiWhite2)"/>
+</svg>

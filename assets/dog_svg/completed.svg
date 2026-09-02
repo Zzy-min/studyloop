@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="corgiGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F2994A"/>
+      <stop offset="100%" stop-color="#D47728"/>
+    </linearGradient>
+    <linearGradient id="corgiWhite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <!-- Left Ear (Happy perked) -->
+  <path d="M 23 48 C 10 28, 14 8, 30 14 C 38 18, 42 38, 38 48 Z" fill="url(#corgiGold)"/>
+  <path d="M 24 43 C 16 26, 19 13, 29 17 C 34 20, 37 36, 34 43 Z" fill="#F9B7C6"/>
+  <!-- Right Ear (Happy perked) -->
+  <path d="M 77 48 C 90 28, 86 8, 70 14 C 62 18, 58 38, 62 48 Z" fill="url(#corgiGold)"/>
+  <path d="M 76 43 C 84 26, 81 13, 71 17 C 66 20, 63 36, 66 43 Z" fill="#F9B7C6"/>
+  <!-- Body/Chest with raised celebrating paws -->
+  <path d="M 30 75 C 30 65, 70 65, 70 75 C 75 88, 68 96, 50 96 C 32 96, 25 88, 30 75 Z" fill="url(#corgiGold)"/>
+  <path d="M 40 70 C 44 65, 56 65, 60 70 C 64 80, 58 92, 50 92 C 42 92, 36 80, 40 70 Z" fill="url(#corgiWhite)"/>
+  <!-- Happy little paws -->
+  <ellipse cx="28" cy="74" rx="6" ry="7" fill="url(#corgiWhite)"/>
+  <ellipse cx="72" cy="74" rx="6" ry="7" fill="url(#corgiWhite)"/>
+  <!-- Head Base -->
+  <ellipse cx="50" cy="52" rx="30" ry="24" fill="url(#corgiGold)"/>
+  <!-- White Snout / Blaze -->
+  <path d="M 50 34 C 47 34, 46 42, 45 48 C 36 50, 34 60, 38 68 C 43 74, 57 74, 62 68 C 66 60, 64 50, 55 48 C 54 42, 53 34, 50 34 Z" fill="url(#corgiWhite)"/>
+  <!-- Happy Closed Arc Eyes (^ ^) -->
+  <path d="M 32 49 Q 37 43 42 49" fill="none" stroke="#261B14" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 58 49 Q 63 43 68 49" fill="none" stroke="#261B14" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Rosy Cheeks -->
+  <circle cx="28" cy="56" r="5.5" fill="#F87171" opacity="0.6"/>
+  <circle cx="72" cy="56" r="5.5" fill="#F87171" opacity="0.6"/>
+  <!-- Nose -->
+  <path d="M 46 56 C 46 53, 54 53, 54 56 C 54 59, 50 61, 46 56 Z" fill="#261B14"/>
+  <circle cx="48.5" cy="55.5" r="0.8" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Open Happy Mouth with Cute Tongue Out! -->
+  <path d="M 44 61 Q 50 63 56 61 C 56 69, 44 69, 44 61 Z" fill="#261B14"/>
+  <path d="M 47 63 C 47 71, 53 71, 53 63 Z" fill="#F87171"/>
+  <line x1="50" y1="58.5" x2="50" y2="61" stroke="#261B14" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Sparkles -->
+  <path d="M 16 28 L 18 22 L 20 28 L 26 30 L 20 32 L 18 38 L 16 32 L 10 30 Z" fill="#FBBF24"/>
+  <path d="M 82 24 L 83.5 19 L 85 24 L 90 25.5 L 85 27 L 83.5 32 L 82 27 L 77 25.5 Z" fill="#FBBF24"/>
+</svg>

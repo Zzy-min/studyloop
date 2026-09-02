@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130">
+  <defs>
+    <linearGradient id="corgiGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6A552"/>
+      <stop offset="100%" stop-color="#D97A26"/>
+    </linearGradient>
+    <linearGradient id="corgiWhite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F7FAF7"/>
+    </linearGradient>
+    <linearGradient id="bandanaGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6EBB77"/>
+      <stop offset="100%" stop-color="#4E9957"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Ear -->
+  <path d="M 28 50 C 14 30, 20 6, 38 12 C 48 18, 50 40, 46 52 Z" fill="url(#corgiGold)"/>
+  <path d="M 30 44 C 22 28, 25 15, 36 20 C 42 24, 44 38, 41 46 Z" fill="#FBB6C4"/>
+  <!-- Right Ear -->
+  <path d="M 92 50 C 106 30, 100 6, 82 12 C 72 18, 70 40, 74 52 Z" fill="url(#corgiGold)"/>
+  <path d="M 90 44 C 98 28, 95 15, 84 20 C 78 24, 76 38, 79 46 Z" fill="#FBB6C4"/>
+
+  <!-- Body (Sitting) -->
+  <path d="M 34 82 C 30 75, 24 95, 24 112 C 24 122, 38 126, 44 124 C 50 122, 54 112, 52 102 Z" fill="url(#corgiGold)"/>
+  <path d="M 86 82 C 90 75, 96 95, 96 112 C 96 122, 82 126, 76 124 C 70 122, 66 112, 68 102 Z" fill="url(#corgiGold)"/>
+  <ellipse cx="60" cy="98" rx="28" ry="24" fill="url(#corgiGold)"/>
+  <ellipse cx="60" cy="98" rx="18" ry="20" fill="url(#corgiWhite)"/>
+
+  <!-- Paws in front -->
+  <!-- Left Paw -->
+  <ellipse cx="44" cy="120" rx="9" ry="6" fill="url(#corgiWhite)"/>
+  <path d="M 40 122 C 40 120, 48 120, 48 122" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Right Paw -->
+  <ellipse cx="76" cy="120" rx="9" ry="6" fill="url(#corgiWhite)"/>
+  <path d="M 72 122 C 72 120, 80 120, 80 122" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Head Base -->
+  <ellipse cx="60" cy="54" rx="34" ry="26" fill="url(#corgiGold)"/>
+  <!-- Snout / Face White Mask -->
+  <path d="M 60 32 C 57 32, 55 42, 54 48 C 44 50, 41 62, 46 72 C 52 79, 68 79, 74 72 C 79 62, 76 50, 66 48 C 65 42, 63 32, 60 32 Z" fill="url(#corgiWhite)"/>
+
+  <!-- Blush -->
+  <circle cx="34" cy="62" r="5" fill="#FCA5A5" opacity="0.6"/>
+  <circle cx="86" cy="62" r="5" fill="#FCA5A5" opacity="0.6"/>
+
+  <!-- Eyes -->
+  <circle cx="45" cy="52" r="4.5" fill="#241A13"/>
+  <circle cx="43.5" cy="50" r="1.6" fill="#FFFFFF"/>
+  <circle cx="75" cy="52" r="4.5" fill="#241A13"/>
+  <circle cx="73.5" cy="50" r="1.6" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <path d="M 55 61 C 55 58, 65 58, 65 61 C 65 65, 60 67, 55 61 Z" fill="#241A13"/>
+  <circle cx="58" cy="60" r="0.9" fill="#FFFFFF" opacity="0.8"/>
+
+  <!-- Smile -->
+  <path d="M 55 66 Q 60 70 65 66" fill="none" stroke="#241A13" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="63" x2="60" y2="68" stroke="#241A13" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Green Bandana with Infinity Symbol -->
+  <path d="M 36 76 Q 60 88 84 76 Q 74 98 60 102 Q 46 98 36 76 Z" fill="url(#bandanaGreen)"/>
+  <!-- Infinity symbol on bandana -->
+  <path d="M 55 87 C 52 84, 48 84, 48 87 C 48 90, 52 90, 55 87 C 58 84, 62 84, 62 87 C 62 90, 58 90, 55 87 Z" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

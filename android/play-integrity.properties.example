@@ -1,0 +1,4 @@
+# This Google Cloud project number is public configuration, not a credential.
+# Copy to android/play-integrity.properties and set it after linking the Play app
+# to the Cloud project that owns the Play Integrity API.
+cloudProjectNumber=YOUR_GOOGLE_CLOUD_PROJECT_NUMBER
