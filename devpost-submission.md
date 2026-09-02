@@ -62,7 +62,7 @@ The free study loop can be tested without credentials. RevenueCat Test Store cre
 
 ## Public Repository Link
 
-TODO: create and add the public repository URL after explicit publication approval.
+https://github.com/Zzy-min/studyloop
 
 ## Demo Video
 
@@ -116,7 +116,7 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - [x] Includes 1024x1024 app icon.
 - [x] Includes at least one 1179x2556 screenshot without a device frame.
 - [x] Includes an MIT open-source license for the public repository.
-- [ ] Public repository URL.
+- [x] Public repository URL: `https://github.com/Zzy-min/studyloop`.
 - [ ] Public YouTube/Vimeo demo URL, maximum 2:00.
 - [x] Student or academic email for Next Gen eligibility: `542513390653@zzuli.edu.cn`.
 - [ ] Minor consent checkbox, if applicable.
