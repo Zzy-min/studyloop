@@ -97,6 +97,8 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - Next Gen does not require a Google Play listing or paid Google Play developer account; judging uses the demo video and public open-source repository.
 - Current automated verification: no analysis issues and 87/87 tests passed.
 - Current debug APK: 210,689,070 bytes; SHA-256 `3FFB4E239646198CCD8F7208936978C41F53E67469896543ACC4382DA5CAED5B`.
+- Latest Test Store debug APK (September 2): 210,688,389 bytes; SHA-256 `958E54B4CC8E64D0EA52656CABB847F27A9342DFDB824EB43A18366A0FF35A1D`.
+- Latest APK was signature-verified and installed successfully on vivo V2458A via non-streaming ADB. Cold launch rendered correctly, the companion input opened the device keyboard, local guidance responded without a crash, and the existing Test Store entitlement was visible as `PRO`. Automated ADB navigation could not reliably complete the entire task-to-timer path, so that path remains pending a direct-touch recording.
 - The debug APK is for local demonstration only, not public distribution. Google Play production signing and listing are outside this Next Gen submission gate.
 - Public repository, video upload, and Devpost submission have not been performed.
 

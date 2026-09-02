@@ -43,7 +43,7 @@ real-device evidence are still absent.
 | `flutter analyze` | PASS | No issues. |
 | `flutter test` | PASS | 87 tests passed. |
 | `flutter build apk --debug --no-pub` | PASS | Built `build/app/outputs/flutter-apk/app-debug.apk`. |
-| Debug APK SHA-256 | INFO | `3FFB4E239646198CCD8F7208936978C41F53E67469896543ACC4382DA5CAED5B` (210,689,070 bytes). This Debug artifact is not distributable. |
+| Debug APK SHA-256 | INFO | Latest Test Store build: `958E54B4CC8E64D0EA52656CABB847F27A9342DFDB824EB43A18366A0FF35A1D` (210,688,389 bytes). This Debug artifact is not distributable. |
 | `flutter build appbundle --release --no-pub` without key | PASS | Failed as designed: no `android/key.properties`; no Debug-signed release artifact produced. |
 | Gateway `npm run build` | PASS | TypeScript check passed. |
 | Gateway `npm test` | PASS | 3 tests passed: valid session, rejected integrity, session/rate-limit enforcement. |

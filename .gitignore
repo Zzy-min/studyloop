@@ -40,6 +40,8 @@ migrate_working_dir/
 /docs/hackathon-build/learner-profile.md
 /docs/hackathon-build/build-notes.md
 /submission-assets/device-current*
+/submission-assets/device-*-latest.*
+/submission-assets/device-*.xml
 /submission-assets/demo-frames/
 /submission-assets/*.mp4
 
