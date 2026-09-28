@@ -70,6 +70,12 @@ Public YouTube demo: https://youtube.com/shorts/slCCfpEPC80?feature=share (56 se
 
 Local raw device capture: `submission-assets/studyloop-demo-raw.mp4` (57 seconds, 1260x2800, no narration; SHA-256 `8630E59AB7118517CFC4313FCFC7C06C9B085D1E5FFA5C2567D35537E64D9287`). This is source footage, not the final public video.
 
+September 28 real-device captures (kept in the ignored `outputs/` folder, not committed):
+
+- `outputs/studyloop-demo-20260928.mp4` - 109.97s, 720x1600, home → Busy barrier → task entry with the on-device keyboard, ends on the task screen.
+- `outputs/studyloop-demo-part2-20260928.mp4` - 91.07s, 720x1600, Records → Insights.
+- Still frames for the focus timer, reflection, summary, Pro, and restore screens exist as `outputs/studyloop-*-20260928.png`; they are not yet part of a continuous recording, so the public video has not been replaced.
+
 ### 120-second shot plan
 
 - 0:00-0:12: Introduce the problem on the first screen and show the waiting study dog.
@@ -84,9 +90,13 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 ## Screenshot Shot List
 
 - App icon: `submission-assets/studyloop-app-icon-1024.png` (1024x1024).
-- Primary screenshot: `submission-assets/studyloop-home-1179x2556.png` (1179x2556, no device frame).
-- Secondary screenshot: `submission-assets/studyloop-history-1179x2556.png` (1179x2556, no device frame).
-- Optional proof shots: start card, focus timer, reflection, Pro state, and RevenueCat sandbox transaction. Review each for personal information before upload.
+- Already-public gallery images (September 1): `studyloop-home-1179x2556.png`, `studyloop-history-1179x2556.png` (both 1179x2556, no device frame).
+- September 28 real-device screenshots, all 1179x2556 and captured without a device frame:
+  - `studyloop-home-20260928-1179x2556.png` - fresh launch, no barrier selected yet.
+  - `studyloop-home-action-20260928-1179x2556.png` - Busy barrier selected, primary action enabled.
+  - `studyloop-card-20260928-1179x2556.png` - one small start, reduced to a single observable step.
+  - `studyloop-focus-20260928-1179x2556.png` - focus timer running with the companion present.
+- Proof shots kept for the video edit, not yet in the gallery: `outputs/studyloop-final-reflect-check.png`, `studyloop-records-20260928.png`, `studyloop-insights-final.png`, `studyloop-pro-final.png`, `studyloop-restore-result-20260928.png`. Review each for personal information before any upload.
 
 ## Submission Readiness Notes
 
@@ -97,12 +107,12 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - Award selection: **Next Gen Award only**. Leave Peace Prize, Design Award, and every other optional award unselected.
 - Next Gen does not require a Google Play listing or paid Google Play developer account; judging uses the demo video and public open-source repository.
 - Current automated verification (September 28): no analysis issues and 90/90 tests passed.
-- Current Test Store debug APK (September 28): 210,691,978 bytes; SHA-256 `98607C2A988F01A07F9C327178EDCE06BBE0227076F45FD4E3D50821167E5AE7`.
+- Current Test Store debug APK (September 28, rebuilt after the reflection-card localization fix): 210,693,080 bytes; SHA-256 `9E87170A7FAE0B2B9A671629825C4907E7E7972FE3D1C04BBB02181D1753518E`.
 - Latest Test Store debug APK (September 2): 210,688,389 bytes; SHA-256 `958E54B4CC8E64D0EA52656CABB847F27A9342DFDB824EB43A18366A0FF35A1D`.
 - Overflow-fixed Test Store debug APK: 210,690,315 bytes; SHA-256 `879C8C78CE7FC696FDBF760979B1664E484AC46BA3BD9D52849611A2A983DCB8`.
 - Latest APK was signature-verified and installed successfully on vivo V2458A via non-streaming ADB. Cold launch rendered correctly, the companion input opened the device keyboard, local guidance responded without a crash, and the existing Test Store entitlement was visible as `PRO`. Automated ADB navigation could not reliably complete the entire task-to-timer path, so that path remains pending a direct-touch recording.
 - The debug APK is for local demonstration only, not public distribution. Google Play production signing and listing are outside this Next Gen submission gate.
-- The public repository and Devpost submission are live. Three September 28 real-device screenshots have been uploaded to the Devpost gallery; a new recording is being checked before replacing the public demo.
+- The public repository and Devpost submission are live. The Devpost gallery still shows the two September 1 home and history images; the September 28 real-device screenshots are staged in `submission-assets/` and are uploaded together with the replaced demo video.
 
 ## Known Limitations
 

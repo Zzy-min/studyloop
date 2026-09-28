@@ -66,6 +66,17 @@ class AppStrings {
   String get aiMicroActionAdopted => isChinese
       ? '已采用柯基极小行动，直接点击下方开始起步！'
       : 'Tiny action added. Tap below to get started!';
+  String get corgiReflectionTitle =>
+      isChinese ? '柯基陪伴复盘 (AI 温暖复盘)' : 'Reflect with Corgi (AI)';
+  String get corgiReflectionAction => isChinese ? '让柯基说说' : 'Ask Corgi';
+  String get corgiReflectionLoading =>
+      isChinese ? '柯基正在为你准备温暖复盘...' : 'Corgi is preparing a kind reflection...';
+  String corgiReflectionPrompt(int seconds) {
+    final duration = formatDuration(seconds);
+    return isChinese
+        ? '本次实际专注了 $duration。每一次跨出第一步都算数，随时点击“让柯基说说”听听鼓励！'
+        : 'You focused for $duration. Every first step counts. Tap “Ask Corgi” for encouragement.';
+  }
 
   // Help & Support
   String get helpAndSupportTitle => isChinese ? '帮助与支持' : 'Help & Support';

@@ -205,8 +205,12 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
     );
   }
 
-  Widget _buildCorgiReflectionCard(BuildContext context, int accumulatedSeconds) {
+  Widget _buildCorgiReflectionCard(
+    BuildContext context,
+    int accumulatedSeconds,
+  ) {
     final actualMinutes = accumulatedSeconds ~/ 60;
+    final strings = ref.watch(stringsProvider);
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -226,10 +230,10 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
                 color: Color(0xFF16A34A),
               ),
               const SizedBox(width: 6),
-              const Expanded(
+              Expanded(
                 child: Text(
-                  '柯基陪伴复盘 (AI 温暖复盘)',
-                  style: TextStyle(
+                  strings.corgiReflectionTitle,
+                  style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
                     color: Color(0xFF15803D),
@@ -263,7 +267,7 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
                       color: const Color(0xFF16A34A),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Row(
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
@@ -271,10 +275,10 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
                           size: 12,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 4),
+                        const SizedBox(width: 4),
                         Text(
-                          '让柯基说说',
-                          style: TextStyle(
+                          strings.corgiReflectionAction,
+                          style: const TextStyle(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
@@ -288,7 +292,7 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
           ),
           const SizedBox(height: 6),
           if (_isReflectingWithCorgi)
-            const Row(
+            Row(
               children: [
                 SizedBox(
                   width: 14,
@@ -300,17 +304,20 @@ class _ReflectionScreenState extends ConsumerState<ReflectionScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Text(
-                  '柯基正在为你准备温暖复盘...',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF166534)),
+                  strings.corgiReflectionLoading,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xFF166534),
+                  ),
                 ),
               ],
             )
           else
             Text(
               _corgiFeedback ??
-                  '本次实际专注了 $actualMinutes 分钟。每一次跨出第一步都算数，随时点击“让柯基说说”听听鼓励！',
+                  strings.corgiReflectionPrompt(accumulatedSeconds),
               style: const TextStyle(
                 fontSize: 12.5,
                 height: 1.45,
