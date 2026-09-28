@@ -54,6 +54,18 @@ class AppStrings {
       isChinese ? '我知道了，开始交流' : 'I understand & Continue';
   String get aiPrivacyCancel => isChinese ? '返回' : 'Go back';
   String get aiThinking => isChinese ? '柯基正在思考...' : 'Corgi is thinking...';
+  String get aiMicroActionCta =>
+      isChinese ? '让柯基帮我再缩小一点 (AI 拆解)' : 'Ask Corgi to make this smaller (AI)';
+  String get aiMicroActionLoading => isChinese
+      ? '🐾 柯基正在帮你把任务拆成轻松第 1 步...'
+      : '🐾 Corgi is finding an easier first step...';
+  String get aiMicroActionSuggestion =>
+      isChinese ? '柯基建议的极小切入点' : 'Corgi suggests a tiny first step';
+  String get aiMicroActionAdopt =>
+      isChinese ? '采用这个极小行动' : 'Use this tiny action';
+  String get aiMicroActionAdopted => isChinese
+      ? '已采用柯基极小行动，直接点击下方开始起步！'
+      : 'Tiny action added. Tap below to get started!';
 
   // Help & Support
   String get helpAndSupportTitle => isChinese ? '帮助与支持' : 'Help & Support';
@@ -218,10 +230,11 @@ class AppStrings {
   String get pause => isChinese ? '暂停' : 'Pause';
   String get resume => isChinese ? '继续' : 'Continue';
   String get endEarly => isChinese ? '提前结束' : 'End early';
-  String get endEarlyDialogTitle => isChinese ? '结束这次专注？' : 'End this session?';
+  String get endEarlyDialogTitle =>
+      isChinese ? '保存这次学习？' : 'Save this study session?';
   String get endEarlyDialogContent => isChinese
-      ? '你可以保存已经专注的时间，这不是失败。'
-      : 'You can save the focused time without calling it a failure.';
+      ? '我们会如实记录你的实际投入时间。'
+      : 'We will record the time you actually spent.';
   String get returnToTimer => isChinese ? '返回计时' : 'Return to timer';
   String get saveFocusedTime => isChinese ? '保存专注时间' : 'Save focused time';
 
@@ -333,7 +346,7 @@ class AppStrings {
   String get noneRecorded => isChinese ? '未填写' : 'None recorded';
 
   // Insights Screen
-  String get insightsTitle => isChinese ? '你的学习规律' : 'Your patterns';
+  String get insightsTitle => isChinese ? '我的学习洞察' : 'My insights';
   String insightProgress(int current, int total) => isChinese
       ? '已收集 $current / $total 条记录。再记录 ${total - current} 次即可解锁你的首个规律洞察。'
       : '$current of $total records collected. ${total - current} more to unlock your first observation.';
@@ -409,7 +422,7 @@ class AppStrings {
       isChinese ? '开始你的学习之旅' : 'Start your study journey';
   String get languageBtn => isChinese ? 'Language / 语言' : 'Language / 语言';
   String get privacyBadgeText =>
-      isChinese ? '学习内容仅保存在本机' : 'Study content stays on this device';
+      isChinese ? '所有数据保存在本地设备中 · 隐私安心' : 'All study data stays on this device';
 
   // Redesign: Home Screen (Learning Start)
   String get greetingGoodMorning => isChinese ? '早上好！👋' : 'Good morning! 👋';
@@ -446,7 +459,7 @@ class AppStrings {
   String get difficultyChallenging => isChinese ? '较难' : 'Challenging';
 
   String get companionCushionTitle =>
-      isChinese ? '柯基伙伴在这里陪着你' : 'Corgi is here with you';
+      isChinese ? '柯基伙伴在这里陪着你 🐾' : 'Corgi is here with you';
   String get companionCushionWaiting => isChinese
       ? '准备好就开始吧，我会在这里等你回来。'
       : 'Start whenever you are ready. I will wait here.';

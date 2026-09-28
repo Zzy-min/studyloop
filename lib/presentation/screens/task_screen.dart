@@ -201,21 +201,23 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
             color: AppTheme.primaryColor.withValues(alpha: 0.2),
           ),
         ),
-        child: const Row(
+        child: Row(
           children: [
             SizedBox(
               width: 16,
               height: 16,
               child: CircularProgressIndicator(
                 strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(AppTheme.primaryColor),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  AppTheme.primaryColor,
+                ),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Expanded(
               child: Text(
-                '🐾 柯基正在帮你把任务拆成轻松第 1 步...',
-                style: TextStyle(
+                strings.aiMicroActionLoading,
+                style: const TextStyle(
                   fontSize: 12.5,
                   color: AppTheme.primaryColor,
                   fontWeight: FontWeight.w600,
@@ -246,10 +248,10 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
                   color: Color(0xFF16A34A),
                 ),
                 const SizedBox(width: 6),
-                const Expanded(
+                Expanded(
                   child: Text(
-                    '柯基建议的极小切入点',
-                    style: TextStyle(
+                    strings.aiMicroActionSuggestion,
+                    style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w700,
                       color: Color(0xFF15803D),
@@ -281,10 +283,7 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
               const SizedBox(height: 2),
               Text(
                 proposal.description,
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: Color(0xFF374151),
-                ),
+                style: const TextStyle(fontSize: 12, color: Color(0xFF374151)),
               ),
             ],
             const SizedBox(height: 8),
@@ -310,7 +309,9 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        '${proposal.suggestedDuration.inMinutes} 分钟',
+                        strings.minutesUnit(
+                          proposal.suggestedDuration.inMinutes,
+                        ),
                         style: const TextStyle(
                           fontSize: 11.5,
                           fontWeight: FontWeight.w600,
@@ -342,16 +343,19 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
                         .read(aiCompanionControllerProvider.notifier)
                         .clearProposal();
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('已采用柯基极小行动，直接点击下方开始起步！'),
+                      SnackBar(
+                        content: Text(strings.aiMicroActionAdopted),
                         duration: Duration(seconds: 2),
                       ),
                     );
                   },
                   icon: const Icon(Icons.check_rounded, size: 14),
-                  label: const Text(
-                    '采用这个极小行动',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                  label: Text(
+                    strings.aiMicroActionAdopt,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],
@@ -378,7 +382,7 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: const Color(0xFFBFDBFE)),
           ),
-          child: const Row(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
@@ -386,10 +390,10 @@ class _TaskScreenState extends ConsumerState<TaskScreen> {
                 size: 14,
                 color: Color(0xFF2563EB),
               ),
-              SizedBox(width: 6),
+              const SizedBox(width: 6),
               Text(
-                '让柯基帮我再缩小一点 (AI 拆解)',
-                style: TextStyle(
+                strings.aiMicroActionCta,
+                style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF1D4ED8),

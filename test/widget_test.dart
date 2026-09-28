@@ -57,9 +57,9 @@ void main() {
     });
     await tester.pumpWidget(appWith(database));
     await tester.pumpAndSettle();
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
-    expect(find.text("I don't know where to start"), findsOneWidget);
-    expect(find.text('There is too much to do'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
+    expect(find.text('Unsure'), findsOneWidget);
+    expect(find.text('Busy'), findsOneWidget);
   });
 
   testWidgets('tiredness follow-up routes ordinary study and severe rest', (
@@ -125,7 +125,8 @@ void main() {
     });
     await tester.pumpWidget(appWith(database));
     await tester.pumpAndSettle();
-    await tapVisible(tester, 'History and insights');
+    await tester.tap(find.text('Records'));
+    await tester.pumpAndSettle();
     expect(find.textContaining('first honest study record'), findsOneWidget);
   });
 
@@ -150,11 +151,12 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    await tapVisible(tester, 'History and insights');
+    await tester.tap(find.text('Records'));
+    await tester.pumpAndSettle();
     await tapVisible(tester, 'View patterns');
     await tapVisible(tester, 'Unlock long-term pattern comparisons');
     await tapVisible(tester, 'Continue with Pro');
-    expect(find.text('Your patterns'), findsOneWidget);
+    expect(find.text('My insights'), findsOneWidget);
     expect(find.textContaining('unavailable'), findsNothing);
     expect(find.textContaining('error'), findsNothing);
   });

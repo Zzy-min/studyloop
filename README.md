@@ -6,7 +6,7 @@ StudyLoop asks why starting is hard, shrinks one task into a single observable a
 
 ## Status
 
-Next Gen Award submission candidate with verified RevenueCat Test Store integration. The public repository, submission copy, MIT license, image assets, and a short public demo video are ready. A Devpost draft exists, but the project has not been finally submitted.
+Next Gen Award entry with verified RevenueCat Test Store integration. The public repository, MIT license, image assets, and demo video are live. Submitted to RevenueCat Shipaton 2026 on Devpost.
 
 ## Run
 
@@ -42,6 +42,6 @@ a Google Play production listing is not part of this submission path.
 
 See `docs/hackathon-build/handoff.md` for verification evidence and remaining gates.
 
-Devpost draft: `devpost-submission.md`. Upload-ready images are in `submission-assets/`.
+Devpost project: https://devpost.com/software/studyloop-jnw4rv
 
 Public demo: https://youtube.com/shorts/slCCfpEPC80?feature=share

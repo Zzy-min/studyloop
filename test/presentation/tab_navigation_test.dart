@@ -23,7 +23,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
 
     await tester.tap(find.text('Records'));
     await tester.pumpAndSettle();
@@ -31,7 +31,7 @@ void main() {
 
     await tester.tap(find.text('Insights'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('Your patterns'), findsWidgets);
+    expect(find.textContaining('My insights'), findsWidgets);
 
     await tester.tap(find.text('Profile'));
     await tester.pumpAndSettle();
@@ -39,11 +39,11 @@ void main() {
 
     await tester.tap(find.text('Home'));
     await tester.pumpAndSettle();
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
 
     await tester.tap(find.text('Home'));
     await tester.pumpAndSettle();
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
     expect(find.byType(NavigationBar), findsOneWidget);
   });
 }

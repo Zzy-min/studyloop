@@ -16,9 +16,8 @@ class EntryScreen extends ConsumerWidget {
     final homeState = ref.watch(homeControllerProvider);
     final homeCtrl = ref.read(homeControllerProvider.notifier);
     final draft = ref.watch(sessionProvider);
-    final strings = ref.watch(stringsProvider);
-    final isChinese = homeState.isChinese;
-    final greeting = homeState.greeting;
+   final strings = ref.watch(stringsProvider);
+   final greeting = homeState.greeting;
 
     final suggested = homeState.suggestedAction;
     final canStartSuggested = suggested?.canStart ?? false;
@@ -32,186 +31,139 @@ class EntryScreen extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: StudyLoopColors.background,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.fromLTRB(16, 6, 16, 12),
-                children: [
-                  // Top Greeting & Settings / Language
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          greeting,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: StudyLoopColors.textPrimary,
+      body: AmbientBackground(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 12),
+                  children: [
+                    // Top greeting. Language lives in Settings.
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            greeting,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: StudyLoopColors.textPrimary,
+                            ),
                           ),
                         ),
+                        IconButton(
+                          tooltip: strings.settingsTooltip,
+                          onPressed: () => context.go('/settings'),
+                          icon: const Icon(
+                            Icons.settings_outlined,
+                            size: 22,
+                            color: StudyLoopColors.textSecondary,
+                          ),
+                          visualDensity: VisualDensity.compact,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+
+                    // Main Headline: Today's question / Entry title
+                   Text(
+                      strings.homeQuestion,
+                      style: StudyLoopTypography.pageTitle,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      strings.homeSubtitle,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: StudyLoopColors.textSecondary,
+                        height: 1.4,
                       ),
-                      const SizedBox(width: 8),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // Language Pill
-                          Tooltip(
-                            message: strings.languageTooltip,
-                            child: InkWell(
-                              onTap: () => homeCtrl.toggleLanguage(),
-                              borderRadius: StudyLoopRadius.borderPill,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: StudyLoopColors.surface,
-                                  borderRadius: StudyLoopRadius.borderPill,
-                                  border: Border.all(
-                                    color: StudyLoopColors.border,
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Icon(
-                                      Icons.language_rounded,
-                                      size: 14,
-                                      color: StudyLoopColors.primary,
-                                    ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      isChinese ? '简' : 'EN',
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700,
-                                        color: StudyLoopColors.primaryDark,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                    ),
+                    const SizedBox(height: 28),
+
+                    // 5 Barrier Compact Horizontal Cards
+                    Row(
+                      children: [
+                        for (final barrier in StudyBarrier.values) ...[
+                          _buildBarrierItem(
+                            barrier,
+                            draft.barrier == barrier,
+                            ref,
+                            strings,
+                          ),
+                          if (barrier != StudyBarrier.values.last)
+                            const SizedBox(width: 8),
+                        ],
+                      ],
+                    ),
+
+                    // Fatigue Follow-up (When tiredness barrier is selected)
+                    if (draft.barrier == StudyBarrier.tiredness) ...[
+                      const SizedBox(height: 14),
+                      Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: StudyLoopColors.surface,
+                          borderRadius: StudyLoopRadius.borderLg,
+                          border: Border.all(color: StudyLoopColors.border),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              strings.fatigueQuestion,
+                              style: const TextStyle(
+                                color: StudyLoopColors.textPrimary,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 6),
-                          IconButton(
-                            tooltip: strings.settingsTooltip,
-                            onPressed: () => context.go('/settings'),
-                            icon: const Icon(
-                              Icons.settings_outlined,
-                              size: 22,
-                              color: StudyLoopColors.textSecondary,
+                            const SizedBox(height: 10),
+                            _FatigueTile(
+                              title: strings.fatigueOrdinaryTitle,
+                              description: strings.fatigueOrdinaryDesc,
+                              isSelected:
+                                  draft.fatigueSeverity ==
+                                  FatigueSeverity.ordinary,
+                              onTap: () => ref
+                                  .read(sessionProvider.notifier)
+                                  .chooseFatigue(FatigueSeverity.ordinary),
                             ),
-                            visualDensity: VisualDensity.compact,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-
-                  // Main Headline: Today's question / Entry title
-                  Text(
-                    strings.entryTitle,
-                    style: StudyLoopTypography.pageTitle,
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    strings.homeSubtitle,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: StudyLoopColors.textSecondary,
-                      height: 1.4,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-
-                  // 5 Barrier Compact Horizontal Cards
-                  Row(
-                    children: [
-                      for (final barrier in StudyBarrier.values) ...[
-                        _buildBarrierItem(
-                          barrier,
-                          draft.barrier == barrier,
-                          ref,
-                          strings,
+                            const SizedBox(height: 8),
+                            _FatigueTile(
+                              title: strings.fatigueSevereTitle,
+                              description: strings.fatigueSevereDesc,
+                              isSelected:
+                                  draft.fatigueSeverity ==
+                                  FatigueSeverity.severe,
+                              onTap: () => ref
+                                  .read(sessionProvider.notifier)
+                                  .chooseFatigue(FatigueSeverity.severe),
+                            ),
+                          ],
                         ),
-                        if (barrier != StudyBarrier.values.last)
-                          const SizedBox(width: 8),
-                      ],
+                      ),
                     ],
-                  ),
+                    const SizedBox(height: 30),
 
-                  // Fatigue Follow-up (When tiredness barrier is selected)
-                  if (draft.barrier == StudyBarrier.tiredness) ...[
-                    const SizedBox(height: 14),
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: StudyLoopColors.surface,
-                        borderRadius: StudyLoopRadius.borderLg,
-                        border: Border.all(color: StudyLoopColors.border),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            strings.fatigueQuestion,
-                            style: const TextStyle(
-                              color: StudyLoopColors.textPrimary,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          _FatigueTile(
-                            title: strings.fatigueOrdinaryTitle,
-                            description: strings.fatigueOrdinaryDesc,
-                            isSelected:
-                                draft.fatigueSeverity ==
-                                FatigueSeverity.ordinary,
-                            onTap: () => ref
-                                .read(sessionProvider.notifier)
-                                .chooseFatigue(FatigueSeverity.ordinary),
-                          ),
-                          const SizedBox(height: 8),
-                          _FatigueTile(
-                            title: strings.fatigueSevereTitle,
-                            description: strings.fatigueSevereDesc,
-                            isSelected:
-                                draft.fatigueSeverity == FatigueSeverity.severe,
-                            onTap: () => ref
-                                .read(sessionProvider.notifier)
-                                .chooseFatigue(FatigueSeverity.severe),
-                          ),
-                        ],
-                      ),
+                    // Section Header: 今日建议的最小行动
+                    Text(
+                      strings.suggestedActionTitle,
+                      style: StudyLoopTypography.cardTitle,
                     ),
-                  ],
-                  const SizedBox(height: 12),
+                    const SizedBox(height: 10),
 
-                  // Section Header: 今日建议的最小行动
-                  Text(
-                    strings.suggestedActionTitle,
-                    style: StudyLoopTypography.sectionTitle,
-                  ),
-                  const SizedBox(height: 10),
-
-                  // Micro-Action Card
-                  StudyCard(
-                    padding: const EdgeInsets.all(12),
-                    child: Column(
+                    // Micro-Action Card
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Task title row
-                        InkWell(
+                        StudyCard(
+                          padding: const EdgeInsets.all(16),
                           onTap: () => context.push('/task'),
-                          borderRadius: StudyLoopRadius.borderMd,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -277,7 +229,7 @@ class EntryScreen extends ConsumerWidget {
                                       vertical: 8,
                                     ),
                                     decoration: const BoxDecoration(
-                                      color: StudyLoopColors.background,
+                                      color: StudyLoopColors.surfaceSubtle,
                                       borderRadius: StudyLoopRadius.borderMd,
                                     ),
                                     child: Row(
@@ -337,7 +289,7 @@ class EntryScreen extends ConsumerWidget {
                                       vertical: 8,
                                     ),
                                     decoration: const BoxDecoration(
-                                      color: StudyLoopColors.background,
+                                      color: StudyLoopColors.surfaceSubtle,
                                       borderRadius: StudyLoopRadius.borderMd,
                                     ),
                                     child: Row(
@@ -421,25 +373,15 @@ class EntryScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 10),
+                    const SizedBox(height: 24),
 
-                  // Corgi Companion Module
-                  const DogCompanion(state: DogState.waiting),
-                  const SizedBox(height: 12),
-
-                  // History and insights shortcut button
-                  Center(
-                    child: TextButton.icon(
-                      onPressed: () => context.go('/history'),
-                      icon: const Icon(Icons.history_rounded, size: 18),
-                      label: Text(strings.historyAndInsights),
-                    ),
-                  ),
-                ],
+                    // Corgi Companion Module
+                   const DogCompanion(state: DogState.waiting),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -491,31 +433,39 @@ class EntryScreen extends ConsumerWidget {
                 .selectBarrier(barrier),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 2),
               decoration: BoxDecoration(
-                color: isSelected
-                    ? StudyLoopColors.primaryLight
-                    : StudyLoopColors.surface,
+                color: StudyLoopColors.surface,
+                boxShadow: StudyLoopShadows.subtle,
                 borderRadius: StudyLoopRadius.borderLg,
                 border: Border.all(
                   color: isSelected
-                      ? StudyLoopColors.primary
+                      ? StudyLoopColors.borderSelected
                       : StudyLoopColors.border,
-                  width: isSelected ? 1.8 : 1.0,
+                  width: isSelected ? 1.2 : 0.8,
                 ),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: isSelected ? Colors.white : bg,
-                      borderRadius: StudyLoopRadius.borderMd,
+                 Container(
+                   width: 44,
+                   height: 48,
+                   decoration: BoxDecoration(
+                     color: isSelected ? Colors.white : bg,
+                     borderRadius: StudyLoopRadius.borderMd,
+                   ),
+                   child: Icon(icon, size: 28, color: color),
+                 ),
+                  if (isSelected)
+                    const Padding(
+                      padding: EdgeInsets.only(top: 2),
+                      child: Icon(
+                        Icons.check_rounded,
+                        size: 12,
+                        color: StudyLoopColors.primary,
+                      ),
                     ),
-                    child: Icon(icon, size: 20, color: color),
-                  ),
                   const SizedBox(height: 6),
                   Text(
                     strings.barrierShortLabel(barrier),
@@ -523,7 +473,7 @@ class EntryScreen extends ConsumerWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 10.5,
                       fontWeight: isSelected
                           ? FontWeight.w700
                           : FontWeight.w600,

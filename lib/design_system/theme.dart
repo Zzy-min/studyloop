@@ -25,6 +25,7 @@ abstract final class StudyLoopTheme {
         'Microsoft YaHei',
         'Segoe UI',
         'Noto Sans SC',
+        'Segoe UI Emoji',
         'Roboto',
       ],
       appBarTheme: const AppBarTheme(

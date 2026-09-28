@@ -56,9 +56,9 @@ flutter test --no-pub
 flutter build apk --debug --no-pub
 ```
 
-Current verified result: analysis reports no issues, all 88 tests pass, and the debug APK is created at `build/app/outputs/flutter-apk/app-debug.apk`.
+Verified on September 28, 2026: analysis reports no issues, all 90 tests pass, and a Test Store debug APK was built at `build/app/outputs/flutter-apk/app-debug.apk`.
 
-The free study loop can be tested without credentials. RevenueCat Test Store credentials are intentionally not committed; the public demo video will show the verified purchase and restore lifecycle. The public repository will document how judges can review the billing integration without exposing a credential.
+The free study loop can be tested without credentials. RevenueCat Test Store credentials are intentionally not committed. The submitted public video currently linked on Devpost still needs a fresh content review for purchase and restore coverage.
 
 ## Public Repository Link
 
@@ -66,7 +66,7 @@ https://github.com/Zzy-min/studyloop
 
 ## Demo Video
 
-TODO: upload an unlisted or public YouTube/Vimeo video and add the URL. Maximum duration: 2:00.
+Public YouTube demo: https://youtube.com/shorts/slCCfpEPC80?feature=share (56 seconds). Maximum duration: 2:00.
 
 Local raw device capture: `submission-assets/studyloop-demo-raw.mp4` (57 seconds, 1260x2800, no narration; SHA-256 `8630E59AB7118517CFC4313FCFC7C06C9B085D1E5FFA5C2567D35537E64D9287`). This is source footage, not the final public video.
 
@@ -91,17 +91,18 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 ## Submission Readiness Notes
 
 - Live hackathon status: registered and submissions open.
+- Devpost project: https://devpost.com/software/studyloop-jnw4rv (published and submitted to RevenueCat Shipaton 2026 on September 10, 2026).
 - Deadline: October 1, 2026 at 06:45 UTC / 14:45 China Standard Time.
 - Target category: Next Gen Award.
 - Award selection: **Next Gen Award only**. Leave Peace Prize, Design Award, and every other optional award unselected.
 - Next Gen does not require a Google Play listing or paid Google Play developer account; judging uses the demo video and public open-source repository.
-- Current automated verification: no analysis issues and 88/88 tests passed.
-- Current debug APK: 210,689,070 bytes; SHA-256 `3FFB4E239646198CCD8F7208936978C41F53E67469896543ACC4382DA5CAED5B`.
+- Current automated verification (September 28): no analysis issues and 90/90 tests passed.
+- Current Test Store debug APK (September 28): 210,691,978 bytes; SHA-256 `98607C2A988F01A07F9C327178EDCE06BBE0227076F45FD4E3D50821167E5AE7`.
 - Latest Test Store debug APK (September 2): 210,688,389 bytes; SHA-256 `958E54B4CC8E64D0EA52656CABB847F27A9342DFDB824EB43A18366A0FF35A1D`.
 - Overflow-fixed Test Store debug APK: 210,690,315 bytes; SHA-256 `879C8C78CE7FC696FDBF760979B1664E484AC46BA3BD9D52849611A2A983DCB8`.
 - Latest APK was signature-verified and installed successfully on vivo V2458A via non-streaming ADB. Cold launch rendered correctly, the companion input opened the device keyboard, local guidance responded without a crash, and the existing Test Store entitlement was visible as `PRO`. Automated ADB navigation could not reliably complete the entire task-to-timer path, so that path remains pending a direct-touch recording.
 - The debug APK is for local demonstration only, not public distribution. Google Play production signing and listing are outside this Next Gen submission gate.
-- Public repository, video upload, and Devpost submission have not been performed.
+- The public repository and Devpost submission are live. Three September 28 real-device screenshots have been uploaded to the Devpost gallery; a new recording is being checked before replacing the public demo.
 
 ## Known Limitations
 
@@ -120,12 +121,13 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - [x] Includes at least one 1179x2556 screenshot without a device frame.
 - [x] Includes an MIT open-source license for the public repository.
 - [x] Public repository URL: `https://github.com/Zzy-min/studyloop`.
-- [ ] Public YouTube/Vimeo demo URL, maximum 2:00.
-- [x] Student or academic email for Next Gen eligibility: `542513390653@zzuli.edu.cn`.
+- [x] Public YouTube demo URL: `https://youtube.com/shorts/slCCfpEPC80?feature=share` (56 seconds).
+- [x] Devpost submitted project: `https://devpost.com/software/studyloop-jnw4rv`.
+- [ ] Confirm the private student/academic email answer in the submitted Devpost form; do not publish it in this repository.
 - [ ] Minor consent checkbox, if applicable.
-- [ ] Confirm RevenueCat project ID. Provisional value from the dashboard URL: `2d675bce`.
+- [x] RevenueCat Project ID confirmed from the authenticated Dashboard: `2d675bce`.
 - [x] Premium demonstration path: RevenueCat Test Store purchase and restore, permitted for Next Gen; no real charge.
 - [x] Award selection: Next Gen Award only; leave every other award field blank.
 - [ ] Confirm country field: China.
 - [x] Codex session ID: `019fe0c9-270f-7402-90bf-7c1371e41ccf`.
-- [ ] Final proofread and explicit approval before any Devpost submission.
+- [ ] Verify the final Devpost gallery and video after the authorized update.

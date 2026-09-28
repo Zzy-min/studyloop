@@ -95,9 +95,9 @@ class _DogCompanionState extends ConsumerState<DogCompanion>
         behavior: HitTestBehavior.opaque,
         onTap: widget.enableChat ? () => showCorgiChatModal(context) : null,
         child: Container(
-          margin: const EdgeInsets.only(bottom: 18),
+          margin: const EdgeInsets.only(bottom: 4),
           decoration: BoxDecoration(
-            color: StudyLoopColors.surface,
+            color: StudyLoopColors.surfaceSubtle,
             borderRadius: StudyLoopRadius.borderXl,
             border: Border.all(color: StudyLoopColors.border),
             boxShadow: StudyLoopShadows.subtle,
@@ -160,7 +160,10 @@ class _DogCompanionState extends ConsumerState<DogCompanion>
                       backgroundColor: StudyLoopColors.primaryLight,
                       textColor: StudyLoopColors.primaryDark,
                     ),
-                    if (ref.watch(aiCompanionControllerProvider).activeProposal != null) ...[
+                    if (ref
+                            .watch(aiCompanionControllerProvider)
+                            .activeProposal !=
+                        null) ...[
                       const SizedBox(height: 10),
                       _buildHomeProposalCard(
                         context,
@@ -177,14 +180,16 @@ class _DogCompanionState extends ConsumerState<DogCompanion>
                             color: StudyLoopColors.primary,
                           ),
                           const SizedBox(width: 4),
-                          Text(
-                            strings.isChinese
-                                ? '卡住了吗？和我说一句'
-                                : 'Stuck? Talk with Corgi',
-                            style: const TextStyle(
-                              fontSize: 11.5,
-                              fontWeight: FontWeight.w600,
-                              color: StudyLoopColors.primaryDark,
+                          Flexible(
+                            child: Text(
+                              strings.isChinese
+                                  ? '卡住了吗？和我说一句'
+                                  : 'Stuck? Talk with Corgi',
+                              style: const TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.w600,
+                                color: StudyLoopColors.primaryDark,
+                              ),
                             ),
                           ),
                         ],

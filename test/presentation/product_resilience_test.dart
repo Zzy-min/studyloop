@@ -30,7 +30,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
     final homeException = tester.takeException();
     if (homeException != null) debugDumpRenderTree();
     expect(homeException, isNull);

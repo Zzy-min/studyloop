@@ -63,14 +63,14 @@ class HomeController extends Notifier<HomeViewState> {
   TaskBreakdownRepository get _breakdownRepo =>
       const DeterministicTaskBreakdownRepository();
 
-  String _calculateGreeting(bool isChinese) {
+  String _calculateGreeting(AppStrings strings) {
     final hour = DateTime.now().hour;
     if (hour >= 5 && hour < 12) {
-      return isChinese ? '早上好！👋' : 'Good morning! 👋';
+      return strings.greetingGoodMorning;
     } else if (hour >= 12 && hour < 18) {
-      return isChinese ? '下午好！👋' : 'Good afternoon! 👋';
+      return strings.greetingGoodAfternoon;
     } else {
-      return isChinese ? '晚上好！👋' : 'Good evening! 👋';
+      return strings.greetingGoodEvening;
     }
   }
 
@@ -123,7 +123,7 @@ class HomeController extends Notifier<HomeViewState> {
     ];
 
     return HomeViewState(
-      greeting: _calculateGreeting(isChinese),
+      greeting: _calculateGreeting(strings),
       barriers: barrierList,
       selectedBarrier: draft.barrier,
       suggestedAction: MinimumActionViewData(
@@ -141,10 +141,6 @@ class HomeController extends Notifier<HomeViewState> {
 
   void selectBarrier(StudyBarrier barrier) {
     ref.read(sessionProvider.notifier).chooseBarrier(barrier);
-  }
-
-  void toggleLanguage() {
-    ref.read(localeProvider.notifier).toggle();
   }
 
   Future<bool> startFocusSession() async {

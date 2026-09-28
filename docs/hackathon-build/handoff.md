@@ -1,5 +1,12 @@
 # StudyLoop local handoff
 
+## Current verification (September 28, 2026)
+
+- Devpost project `studyloop-jnw4rv` is published and was submitted to RevenueCat Shipaton 2026 on September 10. The public GitHub `main` commit is `9dab9daa`; the current local UI changes are not yet represented by that commit.
+- The current local worktree passes `flutter analyze --no-pub` and `flutter test --no-pub` (90/90). Its Test Store debug APK was built and installed on a vivo V2458A, and the latest home screen rendered on the device.
+- Three September 28 real-device screenshots (home action, start card, focus timer) were visually checked, added to `submission-assets/`, and uploaded to the existing Devpost gallery. A new real-device recording was captured; its public video replacement still needs verification. The historical evidence and build hashes below describe earlier versions; do not use them as proof of the September 28 build.
+- The Next Gen path uses the public source repository and demo. Production signing, Play billing mapping, the optional AI gateway, and distinct public privacy/support pages remain separate store-release work.
+
 StudyLoop is a local-first Flutter Android companion that turns study-start friction into one deterministic action, then records an honest reflection. The complete immediate-help loop is free. RevenueCat Test Store now verifies the Pro purchase and restore lifecycle on a physical Android device.
 
 ## Verified story
@@ -46,7 +53,7 @@ For local Test Store verification only, create a gitignored `.revenuecat.local.j
 
 - Dog states are original SVGs in `assets/dog_svg/`. Rive was scheduled as an upgrade and is not required for the current visual baseline.
 - Application dependencies are pinned in `pubspec.lock`: Flutter 3.44.6, Dart 3.12.2, Riverpod, Drift, go_router, purchases_flutter, flutter_svg.
-- No LICENSE file has been added yet; add one before a public repository is created.
+- An MIT `LICENSE` is present in the public repository.
 
 ## 120-second demo plan
 
@@ -62,9 +69,8 @@ Local demo source footage is available at `submission-assets/studyloop-demo-raw.
 
 ## Repository readiness
 
-- A local Git repository has been initialized on `main`; no commit or remote exists yet.
-- Do not push, create a remote, upload media, or submit to Devpost without a separate explicit confirmation.
-- Public-source hygiene now excludes the local RevenueCat configuration, device outputs/XML, participant profile, build diary, and Devpost plugin state. A LICENSE choice and first-commit review remain pending.
+- The repository is public at `https://github.com/Zzy-min/studyloop`, with `main` at `9dab9daa` before the current local update.
+- Public-source hygiene excludes the local RevenueCat configuration, device outputs/XML, participant profile, build diary, and Devpost plugin state. Review each new artifact before publishing.
 
 ## Known limitations
 

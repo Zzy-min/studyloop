@@ -30,9 +30,9 @@ class CorgiPortrait extends StatelessWidget {
   Size get _box => switch (size) {
     CorgiPortraitSize.avatar => const Size(36, 36),
     CorgiPortraitSize.compact => const Size(28, 28),
-    CorgiPortraitSize.medium => const Size(90, 80),
-    CorgiPortraitSize.hero => const Size(200, 220),
-    CorgiPortraitSize.timer => const Size(86, 78),
+    CorgiPortraitSize.medium => const Size(112, 104),
+    CorgiPortraitSize.hero => const Size(240, 250),
+    CorgiPortraitSize.timer => const Size(130, 124),
   };
 
   @override

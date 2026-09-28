@@ -36,6 +36,11 @@ class PrimaryButton extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: TextStyle(
+              fontFamilyFallback: const [
+                'Microsoft YaHei',
+                'Noto Sans SC',
+                'PingFang SC',
+              ],
               fontSize: 16,
               fontWeight: FontWeight.w700,
               color: foregroundColor,
@@ -109,6 +114,11 @@ class SecondaryButton extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
+                  fontFamilyFallback: [
+                    'Microsoft YaHei',
+                    'Noto Sans SC',
+                    'PingFang SC',
+                  ],
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                   color: StudyLoopColors.textPrimary,

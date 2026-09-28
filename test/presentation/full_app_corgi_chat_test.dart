@@ -35,6 +35,8 @@ void main() {
     expect(find.byType(DogCompanion), findsOneWidget);
 
     // Tap DogCompanion
+    await tester.ensureVisible(find.byType(DogCompanion));
+    await tester.pumpAndSettle();
     await tester.tap(find.byType(DogCompanion));
     await tester.pumpAndSettle();
 

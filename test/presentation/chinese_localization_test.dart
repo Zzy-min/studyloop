@@ -69,7 +69,7 @@ void main() {
     await tester.pumpWidget(appWithZh(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('现在为什么学不进去？'), findsOneWidget);
+    expect(find.text('今天想解决什么问题？'), findsOneWidget);
     expect(find.text('我不知道从何开始'), findsOneWidget);
     expect(find.text('要做的事太多了'), findsOneWidget);
     expect(find.text('总是忍不住想看手机'), findsOneWidget);
@@ -170,22 +170,24 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
 
-    // Tap language toggle on top app bar
-    final toggleFinder = find.byIcon(Icons.language_rounded);
-    expect(toggleFinder, findsOneWidget);
-    await tester.tap(toggleFinder);
+    await tester.tap(find.text('Profile'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('简体中文'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('首页'));
     await tester.pumpAndSettle();
 
-    // Now should be in Chinese
-    expect(find.text('现在为什么学不进去？'), findsOneWidget);
+    expect(find.text('今天想解决什么问题？'), findsOneWidget);
 
-    // Tap toggle again
-    await tester.tap(toggleFinder);
+    await tester.tap(find.text('我的'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('English'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Home'));
     await tester.pumpAndSettle();
 
-    // Now back to English
-    expect(find.text('Why can’t you study right now?'), findsOneWidget);
+    expect(find.text('What would you like to tackle today?'), findsOneWidget);
   });
 }

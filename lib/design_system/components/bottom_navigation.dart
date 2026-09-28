@@ -32,7 +32,7 @@ class AppBottomNavigation extends StatelessWidget {
         selectedIndex: currentIndex,
         onDestinationSelected: onTap,
         backgroundColor: StudyLoopColors.surface,
-        indicatorColor: StudyLoopColors.primaryLight,
+        indicatorColor: Colors.transparent,
         elevation: 0,
         height: 64,
         destinations: [
@@ -53,9 +53,9 @@ class AppBottomNavigation extends StatelessWidget {
             label: recordsLabel,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.menu_book_outlined),
+            icon: const Icon(Icons.bar_chart_outlined),
             selectedIcon: const Icon(
-              Icons.menu_book_rounded,
+              Icons.bar_chart_rounded,
               color: StudyLoopColors.primary,
             ),
             label: insightsLabel,

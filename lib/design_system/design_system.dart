@@ -1,4 +1,5 @@
 export 'colors.dart';
+export 'components/ambient_background.dart';
 export 'typography.dart';
 export 'spacing.dart';
 export 'radius.dart';

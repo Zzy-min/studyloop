@@ -214,42 +214,55 @@ class DriftInsightsRepository implements InsightsRepository {
     final paperCount = records
         .where((record) => record.taskType == TaskType.paperWriting)
         .length;
-    final otherCount = records.length - examCount - codeCount - paperCount;
+    final readingCount = records
+        .where((record) => record.taskType == TaskType.reading)
+        .length;
+    final otherCount =
+        records.length - examCount - codeCount - paperCount - readingCount;
     final total = records.length;
 
     double pct(int count) => total == 0 ? 0 : count / total;
 
-    return TaskDistributionInsight(
-      categories: [
-        TaskCategoryDistribution(
-          categoryName: isChinese ? '考试复习' : 'Exam Revision',
-          percentage: pct(examCount),
-          colorHex: 0xFF5FAF68,
-        ),
-        TaskCategoryDistribution(
-          categoryName: isChinese ? '编程练习' : 'Programming',
-          percentage: pct(codeCount),
-          colorHex: 0xFF64B5F6,
-        ),
-        TaskCategoryDistribution(
-          categoryName: isChinese ? '论文写作' : 'Paper Writing',
-          percentage: pct(paperCount),
-          colorHex: 0xFFFFB74D,
-        ),
+    final categories = [
+      TaskCategoryDistribution(
+        categoryName: isChinese ? '考试复习' : 'Exam Revision',
+        percentage: pct(examCount),
+        colorHex: 0xFF9575CD,
+      ),
+      TaskCategoryDistribution(
+        categoryName: isChinese ? '编程练习' : 'Programming',
+        percentage: pct(codeCount),
+        colorHex: 0xFF64B5F6,
+      ),
+      TaskCategoryDistribution(
+        categoryName: isChinese ? '论文写作' : 'Paper Writing',
+        percentage: pct(paperCount),
+        colorHex: 0xFFFFB74D,
+      ),
+      TaskCategoryDistribution(
+        categoryName: isChinese ? '阅读理解' : 'Reading',
+        percentage: pct(readingCount),
+        colorHex: 0xFF5FAF68,
+      ),
+    ];
+    if (otherCount > 0) {
+      categories.add(
         TaskCategoryDistribution(
           categoryName: isChinese ? '其他' : 'Other',
-          percentage: pct(otherCount < 0 ? 0 : otherCount),
-          colorHex: 0xFFBA68C8,
+          percentage: pct(otherCount),
+          colorHex: 0xFFB0BEB2,
         ),
-      ],
-    );
+      );
+    }
+
+    return TaskDistributionInsight(categories: categories);
   }
 
   @override
   Future<InsightExplanation> getExplanation({required bool isChinese}) async {
     final records = await _db.allRecords();
     return InsightExplanation(
-      title: isChinese ? '本地规律是如何计算的？' : 'How are these patterns calculated?',
+      title: isChinese ? '为什么会看到这个建议？' : 'Why this suggestion?',
       description: isChinese
           ? 'StudyLoop 只使用本机真实学习记录。样本不足 3 次时不会给出规律结论。'
           : 'StudyLoop uses only on-device study records. Patterns stay hidden until at least 3 sessions exist.',

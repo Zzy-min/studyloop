@@ -24,6 +24,7 @@ class PatternCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StudyCard(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       child: Row(
         children: [
           Expanded(
@@ -42,7 +43,7 @@ class PatternCardWidget extends StatelessWidget {
                 Text(
                   value,
                   style: const TextStyle(
-                    fontSize: 19,
+                    fontSize: 17,
                     fontWeight: FontWeight.w800,
                     color: StudyLoopColors.textPrimary,
                     letterSpacing: -0.3,
@@ -59,19 +60,98 @@ class PatternCardWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: iconBgColor,
-              shape: BoxShape.circle,
+          const SizedBox(width: 12),
+          SizedBox(
+            width: 76,
+            height: 76,
+            child: CustomPaint(
+              painter: _PatternIllustration(
+                sun: iconData == Icons.wb_sunny_rounded,
+                color: iconColor,
+                background: iconBgColor,
+              ),
             ),
-            child: Icon(iconData, color: iconColor, size: 26),
           ),
         ],
       ),
     );
   }
+}
+
+class _PatternIllustration extends CustomPainter {
+  const _PatternIllustration({
+    required this.sun,
+    required this.color,
+    required this.background,
+  });
+  final bool sun;
+  final Color color;
+  final Color background;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    canvas.drawCircle(
+      center,
+      36,
+      Paint()..color = background.withValues(alpha: .6),
+    );
+    if (sun) {
+      canvas.drawCircle(
+        center + const Offset(0, 7),
+        13,
+        Paint()..color = const Color(0xFFF5C56E),
+      );
+      final ray = Paint()
+        ..color = const Color(0xFFEFB653)
+        ..strokeWidth = 1.5
+        ..strokeCap = StrokeCap.round;
+      for (var i = 0; i < 8; i++) {
+        final angle = i * math.pi / 4;
+        final direction = Offset(math.cos(angle), math.sin(angle));
+        canvas.drawLine(
+          center + const Offset(0, 7) + direction * 20,
+          center + const Offset(0, 7) + direction * 25,
+          ray,
+        );
+      }
+    } else {
+      canvas.drawCircle(
+        center,
+        24,
+        Paint()
+          ..color = color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3,
+      );
+      final hand = Paint()
+        ..color = color
+        ..strokeWidth = 1.5
+        ..strokeCap = StrokeCap.round;
+      for (var i = 0; i < 12; i++) {
+        final angle = i * math.pi / 6;
+        final direction = Offset(math.cos(angle), math.sin(angle));
+        canvas.drawLine(center + direction * 19, center + direction * 21, hand);
+      }
+      canvas.drawLine(center, center + const Offset(0, -14), hand);
+      canvas.drawLine(center, center + const Offset(9, 5), hand);
+      canvas.drawCircle(center, 2, Paint()..color = color);
+    }
+    canvas.drawOval(
+      Rect.fromLTWH(1, 65, 46, 14),
+      Paint()..color = const Color(0xFFDDE9D1),
+    );
+    canvas.drawOval(
+      Rect.fromLTWH(32, 61, 47, 21),
+      Paint()..color = const Color(0xFFB6CCA4),
+    );
+  }
+
+  @override
+  bool shouldRepaint(_PatternIllustration oldDelegate) =>
+      oldDelegate.sun != sun ||
+      oldDelegate.color != color ||
+      oldDelegate.background != background;
 }
 
 class DonutDistributionCard extends StatelessWidget {
