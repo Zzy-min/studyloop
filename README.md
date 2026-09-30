@@ -2,7 +2,7 @@
 
 A calm, offline-first Android companion for university students who know they need to study but cannot start.
 
-StudyLoop asks why starting is hard, shrinks one task into a single observable action, keeps a small dog nearby, and later shows evidence-based patterns. The immediate-help loop is free. Pro unlocks longer history through RevenueCat, with the Test Store purchase and restore lifecycle verified on a physical Android device.
+StudyLoop asks why starting is hard, shrinks one task into a single observable action, keeps a small dog nearby, and later shows evidence-based patterns. The study loop and all local history stay free. Pro unlocks three-month and all-time pattern comparisons through RevenueCat, with the Test Store purchase and restore lifecycle verified on a physical Android device.
 
 ## Status
 
@@ -44,4 +44,6 @@ See `docs/hackathon-build/handoff.md` for verification evidence and remaining ga
 
 Devpost project: https://devpost.com/software/studyloop-jnw4rv
 
-Public demo: https://youtube.com/shorts/slCCfpEPC80?feature=share
+Public demo (updated September 30, 93 seconds): https://www.youtube.com/watch?v=wFz6Qis-V9M
+
+The edit combines real Android recordings and labeled September 28 device screenshots; its final restored-PRO screenshot is explicitly labeled historical August 22 evidence. It is not an uninterrupted new purchase/restore recording. See `docs/hackathon-build/acceptance-2026-09-30.md` for current checks and remaining store-release gaps.

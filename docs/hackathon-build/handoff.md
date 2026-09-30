@@ -1,10 +1,10 @@
 # StudyLoop local handoff
 
-## Current verification (September 28, 2026)
+## Current verification (September 30, 2026)
 
-- Devpost project `studyloop-jnw4rv` is published and was submitted to RevenueCat Shipaton 2026 on September 10. The public GitHub `main` commit is `9dab9daa`; the current local UI changes are not yet represented by that commit.
+- Devpost project `studyloop-jnw4rv` is published and was submitted to RevenueCat Shipaton 2026 on September 10. GitHub `main` was verified at `c835e095d85665fbbf20d6ce01c3c6892d512a5b`, including the UI and reflection-card localization changes.
 - The current local worktree passes `flutter analyze --no-pub` and `flutter test --no-pub` (90/90). Its Test Store debug APK was built and installed on a vivo V2458A, and the latest home screen rendered on the device.
-- Three September 28 real-device screenshots (home action, start card, focus timer) were visually checked, added to `submission-assets/`, and uploaded to the existing Devpost gallery. A new real-device recording was captured; its public video replacement still needs verification. The historical evidence and build hashes below describe earlier versions; do not use them as proof of the September 28 build.
+- Three September 28 real-device screenshots (home action, start card, focus timer) were visually checked, added to `submission-assets/`, and verified in the public Devpost gallery. On September 30 a reviewed 92.90-second captioned edit was published at https://www.youtube.com/watch?v=wFz6Qis-V9M and linked on Devpost. It combines real recordings and labeled device screenshots; restored PRO is explicitly labeled historical August 22 evidence. The historical evidence and build hashes below describe earlier versions; do not use them as proof of a new purchase/restore run.
 - The Next Gen path uses the public source repository and demo. Production signing, Play billing mapping, the optional AI gateway, and distinct public privacy/support pages remain separate store-release work.
 
 StudyLoop is a local-first Flutter Android companion that turns study-start friction into one deterministic action, then records an honest reflection. The complete immediate-help loop is free. RevenueCat Test Store now verifies the Pro purchase and restore lifecycle on a physical Android device.
@@ -33,7 +33,7 @@ For local Test Store verification only, create a gitignored `.revenuecat.local.j
 ## Evidence
 
 - Analyze: no issues.
-- Tests: 38 passed, covering cards, rest/date policy, Drift singleton, timer pause, insights threshold, fake and real-adapter entitlement mapping, localization, Corgi chat, task-field focus, and first-run/rest/reduction/paywall widgets.
+- Current checks on September 30: analyzer reports no issues; all 90 tests pass. Raw logs are in the ignored `outputs/analyze-20260930.log` and `outputs/tests-20260930.log`. The artifact hashes and purchase evidence below are historical, not results of this test run.
 - Test Store debug APK: `build/app/outputs/flutter-apk/app-debug.apk` (211,216,700 bytes, SHA-256 63DE05B510831F9C56DEF0924139852AF9F00D026ACBDA94265B60A09EA2F7AC).
 - Release APK: `build/app/outputs/flutter-apk/app-release.apk` (84,513,279 bytes, SHA-256 E2911C9CB3CA4DF6A77426AAC1058EDF998BD8AA656C289B652487D9B8B16493).
 - Device: vivo V2458A / Android 16. Release install succeeded. The device serial is intentionally omitted from public materials.

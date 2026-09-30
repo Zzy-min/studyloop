@@ -14,7 +14,7 @@ Students often know what they need to study but still cannot begin. Conventional
 
 StudyLoop starts with one question: why can you not study right now? It then shrinks a real task into a specific, observable first action. A quiet study dog stays present while the student focuses, and a short, nonjudgmental reflection records what happened. After enough real sessions, StudyLoop reveals evidence-based patterns without turning the experience into a competition.
 
-The complete immediate-help loop stays free. RevenueCat powers Pro access to longer history and deeper comparisons. Purchase, entitlement activation, cold-start persistence, and restore were verified with RevenueCat Test Store on a physical Android device.
+The complete study loop and all local history stay free. RevenueCat powers Pro access to three-month and all-time pattern comparisons. Purchase, entitlement activation, cold-start persistence, and restore were verified with RevenueCat Test Store on a physical Android device.
 
 ## Why This Matters
 
@@ -38,7 +38,7 @@ Codex session ID: `019fe0c9-270f-7402-90bf-7c1371e41ccf`
 - Nonjudgmental reflection covering difficulty, focus, and emotional change.
 - Local SQLite history, deletion, and evidence-based insights after three records.
 - Six original study-dog states with no reward economy or punitive mechanics.
-- RevenueCat-powered Pro history with verified Test Store purchase and restore.
+- RevenueCat-powered Pro comparisons with verified Test Store purchase and restore.
 - English and Chinese interface support.
 
 ## Architecture
@@ -56,9 +56,9 @@ flutter test --no-pub
 flutter build apk --debug --no-pub
 ```
 
-Verified on September 28, 2026: analysis reports no issues, all 90 tests pass, and a Test Store debug APK was built at `build/app/outputs/flutter-apk/app-debug.apk`.
+Verified again on September 30, 2026: analysis reports no issues and all 90 tests pass. The September 28 Test Store debug APK is at `build/app/outputs/flutter-apk/app-debug.apk`.
 
-The free study loop can be tested without credentials. RevenueCat Test Store credentials are intentionally not committed. The submitted public video currently linked on Devpost still needs a fresh content review for purchase and restore coverage.
+The free study loop can be tested without credentials. RevenueCat Test Store credentials are intentionally not committed. The updated public video shows the current Pro paywall and explicitly labeled historical restored-PRO evidence; it does not show a newly completed purchase transaction.
 
 ## Public Repository Link
 
@@ -66,7 +66,9 @@ https://github.com/Zzy-min/studyloop
 
 ## Demo Video
 
-Public YouTube demo: https://youtube.com/shorts/slCCfpEPC80?feature=share (56 seconds). Maximum duration: 2:00.
+Public YouTube demo: https://www.youtube.com/watch?v=wFz6Qis-V9M (92.90 seconds, updated September 30). Maximum duration: 2:00. YouTube Studio confirmed public publication; Devpost now embeds this video.
+
+Final local edit: `submission-assets/studyloop-demo-20260930.mp4` (720×1600, SHA-256 `3433E7821BB8EC82AA2C2E2EDF5B2E0E1909FE98F0C09A502160BF4F3C622665`). Real recordings are combined with labeled real-device screenshots, and the final August 22 restored-PRO image is labeled historical evidence. This is a captioned edit, not an uninterrupted new purchase/restore recording.
 
 Local raw device capture: `submission-assets/studyloop-demo-raw.mp4` (57 seconds, 1260x2800, no narration; SHA-256 `8630E59AB7118517CFC4313FCFC7C06C9B085D1E5FFA5C2567D35537E64D9287`). This is source footage, not the final public video.
 
@@ -74,18 +76,18 @@ September 28 real-device captures (kept in the ignored `outputs/` folder, not co
 
 - `outputs/studyloop-demo-20260928.mp4` - 109.97s, 720x1600, home → Busy barrier → task entry with the on-device keyboard, ends on the task screen.
 - `outputs/studyloop-demo-part2-20260928.mp4` - 91.07s, 720x1600, Records → Insights.
-- Still frames for the focus timer, reflection, summary, Pro, and restore screens exist as `outputs/studyloop-*-20260928.png`; they are not yet part of a continuous recording, so the public video has not been replaced.
+- Still frames for the task, start card, focus timer, reflection, summary and Pro screens are incorporated into the new public edit with explicit screenshot labels. The interrupted core-recording transfer is not used.
 
-### 120-second shot plan
+### Published 93-second timeline
 
-- 0:00-0:12: Introduce the problem on the first screen and show the waiting study dog.
-- 0:12-0:35: Choose an overload barrier, enter an exam calculation task, generate a start card, and reduce it once.
-- 0:35-1:02: Start a focus session, end early, and complete the reflection without a failure label.
-- 1:02-1:22: Show recent history and the transition from collecting records to one evidence-based observation.
-- 1:22-1:50: Open Pro, complete a RevenueCat Test Store purchase, show the `PRO` state, then restore purchases.
-- 1:50-2:00: Show the matching RevenueCat sandbox entitlement and close on the privacy-first value proposition.
+- 0:00-0:08: Home and study barrier, real Android recording.
+- 0:08-0:26: Calculus task and one small start, labeled device screenshots.
+- 0:26-0:52: Focus, reflection and summary, labeled device screenshots.
+- 0:52-1:13: Saved history and honest insufficient-data insights, real recording.
+- 1:13-1:25: Current Pro paywall with RevenueCat Test Store disclosure.
+- 1:25-1:33: Restored `PRO` Settings screenshot, explicitly labeled historical August 22 evidence.
 
-Voiceover should be concise and factual. Use no copyrighted music, trademarks, or third-party footage.
+The edit uses explanatory captions and no soundtrack or third-party footage.
 
 ## Screenshot Shot List
 
@@ -106,13 +108,13 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - Target category: Next Gen Award.
 - Award selection: **Next Gen Award only**. Leave Peace Prize, Design Award, and every other optional award unselected.
 - Next Gen does not require a Google Play listing or paid Google Play developer account; judging uses the demo video and public open-source repository.
-- Current automated verification (September 28): no analysis issues and 90/90 tests passed.
+- Current automated verification (September 30): no analysis issues and 90/90 tests passed.
 - Current Test Store debug APK (September 28, rebuilt after the reflection-card localization fix): 210,693,080 bytes; SHA-256 `9E87170A7FAE0B2B9A671629825C4907E7E7972FE3D1C04BBB02181D1753518E`.
 - Latest Test Store debug APK (September 2): 210,688,389 bytes; SHA-256 `958E54B4CC8E64D0EA52656CABB847F27A9342DFDB824EB43A18366A0FF35A1D`.
 - Overflow-fixed Test Store debug APK: 210,690,315 bytes; SHA-256 `879C8C78CE7FC696FDBF760979B1664E484AC46BA3BD9D52849611A2A983DCB8`.
 - Latest APK was signature-verified and installed successfully on vivo V2458A via non-streaming ADB. Cold launch rendered correctly, the companion input opened the device keyboard, local guidance responded without a crash, and the existing Test Store entitlement was visible as `PRO`. Automated ADB navigation could not reliably complete the entire task-to-timer path, so that path remains pending a direct-touch recording.
 - The debug APK is for local demonstration only, not public distribution. Google Play production signing and listing are outside this Next Gen submission gate.
-- The public repository and Devpost submission are live. The Devpost gallery still shows the two September 1 home and history images; the September 28 real-device screenshots are staged in `submission-assets/` and are uploaded together with the replaced demo video.
+- The public repository and Devpost submission are live. On September 30 the public gallery was verified to contain the three September 28 home-action, start-card, and focus-timer screenshots alongside the older home/history images. The video was replaced with `wFz6Qis-V9M` and the Pro feature description was corrected to match the paywall.
 
 ## Known Limitations
 
@@ -131,7 +133,7 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - [x] Includes at least one 1179x2556 screenshot without a device frame.
 - [x] Includes an MIT open-source license for the public repository.
 - [x] Public repository URL: `https://github.com/Zzy-min/studyloop`.
-- [x] Public YouTube demo URL: `https://youtube.com/shorts/slCCfpEPC80?feature=share` (56 seconds).
+- [x] Public YouTube demo URL: `https://www.youtube.com/watch?v=wFz6Qis-V9M` (93 seconds).
 - [x] Devpost submitted project: `https://devpost.com/software/studyloop-jnw4rv`.
 - [ ] Confirm the private student/academic email answer in the submitted Devpost form; do not publish it in this repository.
 - [ ] Minor consent checkbox, if applicable.
@@ -140,4 +142,4 @@ Voiceover should be concise and factual. Use no copyrighted music, trademarks, o
 - [x] Award selection: Next Gen Award only; leave every other award field blank.
 - [ ] Confirm country field: China.
 - [x] Codex session ID: `019fe0c9-270f-7402-90bf-7c1371e41ccf`.
-- [ ] Verify the final Devpost gallery and video after the authorized update.
+- [x] Verify the final Devpost gallery and new video embed after the authorized update.
