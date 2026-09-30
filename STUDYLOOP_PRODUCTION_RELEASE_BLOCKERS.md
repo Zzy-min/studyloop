@@ -1,6 +1,19 @@
 # StudyLoop Production Release Blockers
 
-Date: 2026-09-02
+Historical baseline: 2026-09-02. Current follow-up: 2026-09-30.
+
+## Current scope and superseding observations
+
+The owner reaffirmed the **Next Gen student competition only** scope. Live official requirements permit a demo video plus public source instead of a store listing and require no paid developer account. The production gates below must not be treated as competition failures.
+
+- Academic email and repository were verified in the authenticated private Devpost submission; it remains `SUBMITTED`, 5/5 steps done. The email is not published in the repository.
+- Owner-authorized upload key generation and local signed AAB verification are complete; see `docs/SIGNING_PREPARATION_2026-09-30.md`. Play App Signing enrollment is not claimed.
+- Public bilingual privacy/support pages now render at `https://qling.it.com/studyloop/privacy/` and `https://qling.it.com/studyloop/support/`. App support text uses the existing public Gmail contact. Delivery of a support email is not verified.
+- Production payment is not live: RevenueCat shows Test Store only; Play Console requires identity and phone verification and disables app creation. No production console writes or purchase were performed; these remain outside current competition scope.
+- Remote AI is not configured. Review identified that disclosure acceptance is not enforced across every AI entrypoint; public policy now states this limitation. A consistent consent gate is required before enabling remote AI.
+- Current analysis is clean; the earlier September 30 full suite passed 90 tests, and 7 affected localization/resilience tests passed after this support-copy edit.
+
+Everything below is the retained September 2 store-release baseline, superseded where the current observations above differ.
 
 ## Release verdict
 

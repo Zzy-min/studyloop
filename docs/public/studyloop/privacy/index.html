@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyLoop 隐私政策 · Privacy Policy</title>
+<meta name="description" content="StudyLoop 的本地学习记录、可选 AI 服务、购买信息和数据删除说明。">
+<style>
+:root{color-scheme:light;--ink:#25372c;--muted:#526358;--green:#315c43}*{box-sizing:border-box}body{margin:0;background:#f6f7f1;color:var(--ink);font:17px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:820px;margin:40px auto;padding:32px;background:#fff;border:1px solid #dce3d9;border-radius:20px}nav{display:flex;flex-wrap:wrap;gap:20px}a{color:var(--green);text-underline-offset:4px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #315c43;outline-offset:4px}h1{font-size:32px;line-height:1.35;margin:24px 0 12px}h2{font-size:22px;line-height:1.5;margin-top:32px}p,li{overflow-wrap:anywhere}.meta,.en{color:var(--muted)}.notice{padding:16px 20px;background:#edf3e9;border-radius:12px}.en{font-size:15px}footer{margin-top:32px;border-top:1px solid #dce3d9;padding-top:20px}@media(max-width:600px){main{margin:12px;padding:22px}h1{font-size:27px}body{font-size:16px}}
+</style>
+</head>
+<body><main>
+<nav aria-label="StudyLoop 页面"><a href="/studyloop/support/">帮助与支持 · Support</a><a href="https://github.com/Zzy-min/studyloop">项目源码 · Source</a></nav>
+<h1>StudyLoop 隐私政策<br><span lang="en">Privacy Policy</span></h1>
+<p class="meta">最近更新 / Updated: 2026-09-30 · 生效 / Effective: 2026-09-02<br>开发者 / Developer: 张子阳 · Ziyang Zhang</p>
+<p class="notice">无需注册。学习记录保存在本机；你主动使用联网服务时，只有对应功能所需的数据会发送给服务提供方。</p>
+<p lang="en" class="en">No account is required. Study records are stored on your device. Network features process the data described below only when applicable.</p>
+<section><h2>1. 本地学习记录 · Local study records</h2>
+<p>任务标题与类别、启动障碍、计划及实际专注时长、复盘评分与下一步行动、历史记录和统计保存在设备的 SQLite 数据库中。StudyLoop 不提供学习数据库云同步，也不向 RevenueCat 发送这些学习内容。</p>
+<p lang="en" class="en">Task titles and categories, starting barriers, focus durations, reflections, next actions and history are stored in local SQLite. StudyLoop does not provide cloud sync for that database or send study content to RevenueCat.</p>
+<p>若你启用了 Android 系统备份，系统可能按你的设备设置保存应用数据副本。</p>
+<p lang="en" class="en">Android system backup may retain app data according to your device settings.</p></section>
+<section><h2>2. 购买与权益 · Purchases and entitlements</h2>
+<p>配置了 RevenueCat SDK 的版本会处理匿名应用用户标识、购买凭证或令牌、商品与权益状态，以及 SDK 工作所需的应用/SDK 版本和网络等技术信息。支付资料由相应商店处理，StudyLoop 不接收银行卡信息。</p>
+<p lang="en" class="en">Configured RevenueCat builds process an anonymous app user ID, receipts or purchase tokens, product and entitlement status, and technical information needed for SDK operation, including app/SDK versions and network information. Payment details are handled by the applicable store.</p>
+<p>当前参赛演示使用 RevenueCat Test Store，不产生真实扣款。Google Play 正式支付尚未上线。核心学习流程和全部本地历史免费；Pro 提供三个月及全部时段的模式比较。</p>
+<p lang="en" class="en">The competition demo uses RevenueCat Test Store without real charges. Production Google Play billing is not live. The study loop and all local history are free; Pro provides three-month and all-time pattern comparisons.</p></section>
+<section><h2>3. 可选 AI 伴侣 · Optional AI companion</h2>
+<p>本地规则建议无需联网。配置了受保护 AI 网关的版本中，主动发送聊天消息或请求柯基微行动、复盘反馈时，相应文本与上下文可能交由网关和模型服务处理。当前网关源码使用 DeepSeek；生产网关部署尚未核实。当前参赛版本未配置远程网关。</p>
+<p lang="en" class="en">Local rule-based suggestions work offline. In a configured build, sending a chat message or requesting a Corgi micro-action or reflection reply may send the corresponding text and context to the protected gateway. The implementation uses DeepSeek; production deployment is unverified. The current competition build has no remote gateway configured.</p>
+<p>聊天界面显示隐私说明，但当前实现尚未在所有 AI 入口强制检查说明是否已接受。在统一同意机制完成并验证前，远程 AI 保持关闭；本地建议仍可使用。</p>
+<p lang="en" class="en">The chat screen displays a disclosure, but acceptance is not enforced across every AI entrypoint. Remote AI must remain disabled until a consistent consent gate is implemented and verified. Local suggestions remain available.</p>
+<ul><li>发送范围：消息、语言、当前任务标题与类别、所选障碍、聊天界面与伴侣/专注状态、时长、可选本地洞察，以及近七天的汇总统计。</li><li>网关鉴权还会使用随机安装标识、请求摘要和 Google Play Integrity 令牌；托管方可能接收 IP 等网络信息。</li><li>不会上传完整 SQLite 数据库或完整历史会话清单。请勿在聊天中填写身份、财务、医疗等敏感资料。</li></ul>
+<p lang="en" class="en">Sent context may include your message, locale, current task and category, barrier, chat surface, companion/focus state, durations, an optional local insight and seven-day aggregates. Gateway authentication uses a random installation ID, request hash and Play Integrity token; hosts may receive network metadata such as IP addresses. The full database and complete historical session list are not uploaded. Avoid sensitive personal information.</p>
+<p>网关源码避免记录聊天正文，并为防滥用记录设置过期字段；生产日志保留与 TTL 执行尚未核实。我们不宣称已获得零保留协议。第三方按其政策保存数据，且可能在你所在国家以外处理。</p>
+<p lang="en" class="en">Gateway code avoids logging chat text and sets expiry fields on abuse-control records; production retention and TTL enforcement are unverified. No verified zero-retention agreement is claimed. Providers apply their own retention policies and may process data outside your country.</p></section>
+<section><h2>4. 数据删除与支持 · Deletion and support</h2>
+<p>可以在记录详情中删除单条学习记录。清除 Android 应用存储或卸载应用可移除本地数据；系统备份副本须按设备备份设置管理。删除本地数据不会取消商店订阅或删除服务商必须保留的购买记录。</p>
+<p lang="en" class="en">Delete individual records from Record Detail, or clear Android app storage/uninstall to remove local data. Manage system backups separately. Local deletion does not cancel subscriptions or erase provider purchase records.</p>
+<p>隐私咨询及私人请求请发送至 <a href="mailto:zzy19812007@gmail.com">zzy19812007@gmail.com</a>。公开问题可提交至 <a href="https://github.com/Zzy-min/studyloop/issues">GitHub Issues</a>，请勿公开凭证、密钥、身份资料或私人学习内容。不承诺未经验证的邮件回复时限。</p>
+<p lang="en" class="en">Email private privacy requests to the address above. GitHub issues are public: omit receipts, keys, identity documents and private study content. No unverified inbox response-time guarantee is made.</p></section>
+<section><h2>5. 服务商政策 · Provider policies</h2>
+<ul><li><a href="https://policies.google.com/privacy">Google Privacy Policy</a>：商店、可选网关托管及 Play Integrity。</li><li><a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a>：购买与权益管理。</li><li><a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">DeepSeek Privacy Policy</a>：仅在配置了远程网关时处理伴侣消息。</li></ul></section>
+<section><h2>6. 使用边界 · Educational use</h2><p>StudyLoop 是学习启动辅助工具，不提供医疗或心理诊断、治疗，也不承诺治愈疾病。</p><p lang="en" class="en">StudyLoop supports starting study tasks. It does not provide medical or psychological diagnosis or treatment, or claim to cure conditions.</p></section>
+<footer><a href="/studyloop/support/">前往帮助与支持 · Get support</a></footer>
+</main></body></html>

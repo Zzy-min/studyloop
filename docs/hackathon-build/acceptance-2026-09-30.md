@@ -8,7 +8,7 @@ The user authorized fixes and updates to the existing GitHub repository and Devp
 | --- | --- | --- |
 | Official entry | Devpost API reports `published`, submitted to RevenueCat Shipaton 2026 at `2026-09-10T00:13:23.183-04:00`; https://devpost.com/software/studyloop-jnw4rv | A draft or missing submission would fail. Existing submission confirmed; private award/form answers are not returned by this API. |
 | Deadline | Live Devpost dates: `2026-10-01T06:45:00Z`, October 1 at 14:45 China Standard Time; phase `submissions_open` | Missing the official deadline would fail. |
-| Student route | Live submission requirements explicitly permit video plus public source instead of a store listing for Next Gen | Student/academic email and applicable consent remain private form checks; do not invent or publish these values. |
+| Student route | Live requirements permit video plus public source instead of a store listing for Next Gen. Authenticated additional-info form now confirms the owner-supplied academic email, public repository, Android selection and existing minor-consent checkbox. | Email is retained only in the private Devpost form. Inbox ownership and organizer eligibility review are not independently verified. |
 | Source and license | Public `main` verified at `c835e095d85665fbbf20d6ce01c3c6892d512a5b`; repository https://github.com/Zzy-min/studyloop; tracked `LICENSE` | Missing public source or license would fail. |
 | Static analysis | September 30 `flutter analyze --no-pub`: no issues | Analyzer errors would fail. Raw local log: `outputs/analyze-20260930.log`. |
 | Tests | September 30 `flutter test --no-pub -r compact`: 90 passed | Any failing test would fail. Raw local log: `outputs/tests-20260930.log`. |
@@ -33,10 +33,10 @@ The user authorized fixes and updates to the existing GitHub repository and Devp
 
 The official Next Gen requirements do not require a paid developer account or production store listing. The following remain store-release gates, independent of the verified competition entry:
 
-- Production signing: `android/key.properties` is absent. Do not manufacture a signing identity or publish a debug-signed release.
-- Play/RevenueCat production mapping: not verified; Test Store evidence does not establish production purchases.
+- Local signing: owner authorized a new upload key. A release AAB was built and its signer verified against that key; see `docs/SIGNING_PREPARATION_2026-09-30.md`. This is not Play App Signing enrollment or store publication.
+- Play/RevenueCat production mapping: not live. RevenueCat's authenticated Apps screen has only Test Store; Play Console requires developer identity and phone verification before app creation. These are future store-release gates, not Next Gen competition requirements. The owner explicitly reaffirmed the student-only scope.
 - Protected AI gateway: source exists under `services/ai-gateway`; deployment is not verified. The demonstrated guidance is deterministic and local.
-- Public privacy/support URLs: direct HTTP retrieval returned 200 for both proposed URLs, but both returned the identical personal-site fallback HTML (title `张子阳 的个人网站`), without StudyLoop text. HTTP 200 is not evidence that these policy/support pages are deployed. This remains a store-release gap.
+- Public privacy/support URLs: https://qling.it.com/studyloop/privacy/ and https://qling.it.com/studyloop/support/ now render the real bilingual StudyLoop pages. Source is under `docs/public/studyloop/`; matching copies are in the website's `nextjs/public/studyloop/`. After owner approval, Caddy received a matcher scoped to `/studyloop/*` and a reload. Browser screenshots are in ignored `outputs/studyloop-privacy-live-20260930.jpg` and `outputs/studyloop-support-live-20260930.jpg`. Public support email replaces the app placeholder; inbox delivery has not been tested.
 - Play-track golden/bad paths: acceptance script exists in `docs/REAL_DEVICE_ACCEPTANCE.md`; no new Play-track evidence is claimed.
 
 ## Media provenance and handling
@@ -46,3 +46,11 @@ Use actual Android screen captures only. Trimming waits, cropping system status 
 The finished local edit decodes without errors and was visually checked at every shot. It uses September 28 home/history/insights recordings and task/card/timer/reflection/summary/Pro device screenshots. The final restored-PRO Settings screenshot is dated August 22 and labeled as historical evidence. The original core recording could not be fully transferred because of repeated USB/ADB disconnects; no partial capture is used. SHA-256 of the reviewed edit: `3433E7821BB8EC82AA2C2E2EDF5B2E0E1909FE98F0C09A502160BF4F3C622665`.
 
 Current paywall copy confirms that all local history stays free. README and submission copy were corrected to describe Pro as three-month/all-time pattern comparisons, rather than paid access to history.
+
+## Follow-up verification
+
+- Authenticated Devpost submission `1176502` shows `SUBMITTED`, `5/5 steps done`, and a disabled `Project submitted!` button. The additional-info form's academic email matches the value supplied by the owner. No new rules or consent terms were accepted. Private email is omitted from GitHub.
+- The project-details form still held the older video URL despite the public API update. Saved the latest `wFz6Qis-V9M` URL into that form; the public API confirms the same current URL afterward.
+- After the support-copy change: `flutter analyze --no-pub` reports no issues; Chinese localization and product resilience tests pass, 7 total. The initial guessed settings-test path did not exist; the actual affected tests were located and run.
+- Review corrected an unsupported claim that all remote AI entrypoints enforce disclosure acceptance. The policy now explicitly describes the limitation. Remote AI remains unconfigured; implement and verify a consistent consent gate before enabling a gateway.
+- Flutter review approved the corrected public copy with no critical/high findings. The signed AAB is a credential-free build with local guidance; it does not demonstrate a fresh Test Store or production purchase.

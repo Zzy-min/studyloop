@@ -29,6 +29,11 @@ also contains an optional production-oriented AI gateway, but it is not deployed
 or required for the submitted demo. Do not commit RevenueCat, DeepSeek, signing,
 or service-account credentials.
 
+Public [privacy policy](https://qling.it.com/studyloop/privacy/) and
+[help/support page](https://qling.it.com/studyloop/support/) are deployed in
+Chinese and English. Support: `zzy19812007@gmail.com`. Private information belongs
+in email, not public GitHub issues.
+
 ## Next Gen Submission
 
 StudyLoop is entering the RevenueCat Shipaton 2026 **Next Gen Award only**. This

@@ -96,8 +96,8 @@ class AppStrings {
       : 'Messages you actively send to Corgi are sent to AI services to generate suggestions. We practice strict data minimization and never upload your full database.';
   String get feedbackTitle => isChinese ? '问题反馈与支持' : 'Feedback & Support';
   String get feedbackContactText => isChinese
-      ? '如有任何疑问、异常反馈或改进建议，请在项目仓库提交 Issue 或联系支持通道。\n[SUPPORT CONTACT REQUIRED BEFORE RELEASE: support@studyloop.app]'
-      : 'For questions, bug reports, or suggestions, please file an issue or contact our support channel.\n[SUPPORT CONTACT REQUIRED BEFORE RELEASE: support@studyloop.app]';
+      ? '问题反馈：zzy19812007@gmail.com，或在 StudyLoop GitHub 仓库提交 Issue。公开 Issue 请勿包含订单凭证、密钥或私人学习内容。'
+      : 'Contact zzy19812007@gmail.com or file an issue in the StudyLoop GitHub repository. Keep receipts, keys, and private study content out of public issues.';
   String get privacyPolicyTitle => isChinese ? '隐私政策' : 'Privacy Policy';
   String get appVersionLabel => isChinese ? '版本号' : 'App Version';
   String get appVersionValue => 'v1.0.0 (RC-1, Build 1)';

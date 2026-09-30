@@ -1,5 +1,7 @@
 # StudyLoop Production Console Configuration
 
+**Current scope, September 30:** the owner is entering the Next Gen student award. Production store setup is future work and is not required for this competition. Do not execute this runbook as a competition gate. The local upload key and signed AAB are prepared; public privacy/support pages are deployed. Play developer verification and real billing remain uncompleted.
+
 This document is an approval-gated runbook. Do not perform any of its console
 writes or purchases until the owner confirms the exact target account.
 
